@@ -1,0 +1,40 @@
+.pill {
+  composes: pill from "./ui.module.css";
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.info {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+.warn {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.brand {
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.good {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.neutral {
+  background: var(--surface-sunken);
+  color: var(--text-2);
+}
+
+.bad {
+  background: var(--danger-bg);
+  color: var(--danger);
+}

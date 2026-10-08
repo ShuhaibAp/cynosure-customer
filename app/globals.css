@@ -1,49 +1,112 @@
+/* Cascade layers: `base` < `components` (ui.module.css) < unlayered screen styles.
+   Layer order, not stylesheet load order, decides who wins, so a screen's own
+   rules always override the shared primitives it composes. */
+@layer base, components;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand (fixed by the client's theme) */
+  --brand: #b44b14;
+  --brand-hover: #f37630;
+  --brand-strong: #953c0f;
+  --brand-tint: #fbede4;
+  --brand-tint-border: #f3d2bc;
+
+  --bg: #f6f5f3;
+  --surface: #ffffff;
+  --surface-muted: #faf9f7;
+  --surface-sunken: #f2f1ee;
+  --border: #e7e5e0;
+  --border-strong: #d6d4ce;
+
+  --text: #1f2020;
+  --text-2: #5d5c58;
+  --text-3: #85837e;
+
+  --sidebar: #222323;
+  --sidebar-2: #2b2d2d;
+  --sidebar-border: #383a3a;
+
+  --info: #1c6b8c;
+  --info-bg: #e6f0f5;
+  --info-border: #c4dbe6;
+  --success: #1f8a4c;
+  --success-bg: #e4f2e9;
+  --success-border: #c5e4d0;
+  --warning: #a86f0c;
+  --warning-bg: #fdf2dd;
+  --warning-border: #eedcae;
+  --danger: #c2352b;
+  --danger-bg: #fbeae8;
+  --danger-border: #f0c9c5;
+
+  --radius-lg: 14px;
+  --radius: 10px;
+  --radius-sm: 8px;
+
+  --shadow-sm: 0 1px 2px rgba(31, 32, 32, 0.05);
+  --shadow-md: 0 1px 2px rgba(31, 32, 32, 0.05), 0 6px 16px -6px rgba(31, 32, 32, 0.12);
+  --ring: 0 0 0 3px rgba(180, 75, 20, 0.16);
+
+  --font: var(--font-barlow), "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--brand-strong);
+  }
+
+  ::placeholder {
+    color: #a3a19c;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--brand-tint-border);
   }
 }
 
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

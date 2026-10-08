@@ -1,0 +1,239 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+}
+
+/* ---- brand panel ---- */
+.aside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px 56px;
+  color: #fff;
+  background:
+    radial-gradient(90% 60% at 0% 0%, rgba(243, 118, 48, 0.28), transparent 60%),
+    radial-gradient(70% 50% at 100% 100%, rgba(180, 75, 20, 0.35), transparent 65%), var(--sidebar);
+  overflow: hidden;
+}
+
+.aside::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, transparent, #000 40%, transparent);
+  pointer-events: none;
+}
+
+.aside > * {
+  position: relative;
+  z-index: 1;
+}
+
+.logoCard {
+  align-self: flex-start;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.logoCard img {
+  display: block;
+  width: 176px;
+  height: auto;
+}
+
+.pitch {
+  max-width: 520px;
+}
+
+.headline {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.lead {
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: #c3c5c4;
+  margin: 0 0 28px;
+}
+
+.stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  counter-reset: stage;
+}
+
+.stages li {
+  counter-increment: stage;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e6e7e6;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 6px 12px 6px 10px;
+}
+
+.stages li::before {
+  content: counter(stage, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--brand-hover);
+  margin-right: 7px;
+}
+
+.asideFoot {
+  font-size: 13px;
+  color: #8f9291;
+  margin: 0;
+}
+
+/* ---- form panel ---- */
+.formSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--surface);
+}
+
+.panel {
+  width: 100%;
+  max-width: 400px;
+}
+
+.mobileBrand {
+  display: none;
+  margin-bottom: 32px;
+}
+
+.mobileBrand img {
+  display: block;
+  width: 168px;
+  height: auto;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-tint);
+  border-radius: 6px;
+  padding: 5px 9px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  font-size: 15.5px;
+  color: var(--text-2);
+  margin: 0 0 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  composes: label from "@/components/ui.module.css";
+}
+
+.input {
+  composes: input from "@/components/ui.module.css";
+  min-height: 46px;
+}
+
+.button {
+  composes: btnPrimary from "@/components/ui.module.css";
+  width: 100%;
+  min-height: 48px;
+  margin-top: 4px;
+  font-size: 15.5px;
+}
+
+.error {
+  composes: alertError from "@/components/ui.module.css";
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .formSide {
+    align-items: flex-start;
+    padding-top: 56px;
+  }
+
+  .mobileBrand {
+    display: block;
+  }
+}
+
+/* ---- customer portal additions ---- */
+.notice {
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 14px;
+  margin: -12px 0 20px;
+}
+
+.alt {
+  margin: 20px 0 0;
+  font-size: 14.5px;
+  text-align: center;
+}
+
+.sent {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+/* Pages without the brand panel (set / forgot password) use the full width. */
+.solo {
+  grid-column: 1 / -1;
+}
+
+.brandShown {
+  display: block;
+}

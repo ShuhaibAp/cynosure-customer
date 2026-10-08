@@ -1,0 +1,389 @@
+/* Shared primitives. Module stylesheets pull these in with `composes`, so a
+   button, card, input or alert looks the same on every screen.
+
+   Everything lives in the `components` layer (see app/globals.css). Unlayered
+   screen styles always beat layered ones, so a screen can tweak a primitive
+   (padding, width, ...) without depending on stylesheet order. */
+@layer base, components;
+
+@layer components {
+  /* ---- page header ---- */
+  .pageHead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .h1 {
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  .sub {
+    font-size: 15px;
+    color: var(--text-2);
+    margin: 6px 0 0;
+  }
+
+  /* ---- buttons ---- */
+  .btn,
+  .btnPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s,
+      color 0.15s;
+  }
+
+  .btn:hover:not(:disabled) {
+    border-color: var(--brand);
+    color: var(--brand);
+  }
+
+  .btnPrimary {
+    color: #fff;
+    background: var(--brand);
+    border-color: var(--brand);
+  }
+
+  .btnPrimary:hover:not(:disabled) {
+    color: #fff;
+    background: var(--brand-strong);
+    border-color: var(--brand-strong);
+  }
+
+  .btn:disabled,
+  .btnPrimary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .linkBtn {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brand);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .linkBtn:hover {
+    color: var(--brand-strong);
+  }
+
+  /* ---- form controls ---- */
+  .label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .req {
+    color: var(--danger);
+  }
+
+  .opt {
+    color: var(--text-3);
+    font-weight: 400;
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    transition:
+      border-color 0.15s,
+      box-shadow 0.15s;
+  }
+
+  .input:hover:not(:focus) {
+    border-color: #bdbbb5;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: var(--ring);
+  }
+
+  .invalid,
+  .invalid:hover:not(:focus) {
+    border-color: var(--danger);
+  }
+
+  .fieldError {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--danger);
+    margin-top: 5px;
+  }
+
+  /* ---- surfaces ---- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 24px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .alertSuccess,
+  .alertWarn,
+  .alertError,
+  .alertInfo,
+  .alertNeutral {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    padding: 12px 16px;
+  }
+
+  .alertSuccess {
+    color: var(--success);
+    background: var(--success-bg);
+    border-color: var(--success-border);
+  }
+
+  .alertWarn {
+    color: var(--warning);
+    background: var(--warning-bg);
+    border-color: var(--warning-border);
+  }
+
+  .alertError {
+    color: var(--danger);
+    background: var(--danger-bg);
+    border-color: var(--danger-border);
+  }
+
+  .alertInfo {
+    color: var(--info);
+    background: var(--info-bg);
+    border-color: var(--info-border);
+  }
+
+  .alertNeutral {
+    color: var(--text-2);
+    background: var(--surface-sunken);
+    border-color: var(--border-strong);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 5px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* ---- table ---- */
+  .tableCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .scroll {
+    overflow-x: auto;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    background: var(--surface-muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #efedea;
+    vertical-align: middle;
+  }
+
+  .table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .table tbody tr {
+    transition: background-color 0.12s;
+  }
+
+  .table tbody tr:hover {
+    background: var(--surface-muted);
+  }
+
+  /* ---- upload zone ---- */
+  .drop {
+    border: 1.5px dashed var(--border-strong);
+    border-radius: var(--radius);
+    padding: 26px 20px;
+    text-align: center;
+    background: var(--surface-muted);
+    cursor: pointer;
+    transition:
+      border-color 0.15s,
+      background-color 0.15s;
+  }
+
+  .drop:hover,
+  .dragging {
+    border-color: var(--brand);
+    background: var(--brand-tint);
+  }
+
+  .dropTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .dropHint {
+    font-size: 12.5px;
+    color: var(--text-3);
+  }
+
+  /* ---- thumbnails ---- */
+  .thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .thumb {
+    position: relative;
+    width: 84px;
+  }
+
+  .thumbBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface-sunken);
+    overflow: hidden;
+  }
+
+  .thumbBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .thumbRemove {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--surface);
+    background: var(--text);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumbRemove:hover {
+    background: var(--danger);
+  }
+
+  .thumbName {
+    font-size: 12px;
+    color: var(--text-3);
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ---- small helpers ---- */
+  .mono {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .muted {
+    color: var(--text-3);
+  }
+
+  /* ---- touch screens ---- */
+  /* iOS Safari zooms the page when a focused field is under 16px, and 44px is
+     the minimum comfortable tap target. */
+  @media (max-width: 640px) {
+    .input {
+      font-size: 16px;
+    }
+
+    .btn,
+    .btnPrimary {
+      min-height: 44px;
+    }
+  }
+}
