@@ -52,6 +52,22 @@ export default async function OrderPage({ params }) {
         )}
       </section>
 
+      {order.documents.length > 0 && (
+        <section className={styles.card}>
+          <h2 className={styles.cardTitle}>Your documents</h2>
+          <ul className={styles.docs}>
+            {order.documents.map((d) => (
+              <li key={d.kind} className={styles.docRow}>
+                <span>{d.title}</span>
+                <a href={`/orders/${order.id}/documents/${d.kind}`} target="_blank" rel="noreferrer" className={styles.docLink}>
+                  Open PDF
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <section className={styles.card}>
         <h2 className={styles.cardTitle}>Contact details on this order</h2>
         <dl className={styles.details}>

@@ -235,6 +235,30 @@
   grid-column: 1 / -1;
 }
 
+/* ---- documents ---- */
+.docs {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.docRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.docLink {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* ---- order request ---- */
 .requestSent {
   background: var(--success-bg);
