@@ -5,7 +5,7 @@ import { requestOrder } from "@/app/actions/requests";
 import { formatDay } from "@/lib/stages";
 import styles from "@/app/(portal)/portal.module.css";
 
-/** "I have an order ready for pickup": tells the Cynosure team, who then register the order. */
+/** "I have an order ready for pickup": tells the Reviens Tech team, who then register the order. */
 export default function OrderRequestCard({ waiting }) {
   const [state, action, pending] = useActionState(requestOrder, undefined);
 

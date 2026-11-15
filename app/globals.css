@@ -5,26 +5,26 @@
 
 :root {
   /* Brand (fixed by the client's theme) */
-  --brand: #b44b14;
-  --brand-hover: #f37630;
-  --brand-strong: #953c0f;
-  --brand-tint: #fbede4;
-  --brand-tint-border: #f3d2bc;
+  --brand: #0f6b4e;
+  --brand-hover: #168a64;
+  --brand-strong: #0a5540;
+  --brand-tint: #e8f4ee;
+  --brand-tint-border: #bfdfd0;
 
-  --bg: #f6f5f3;
+  --bg: #f4f7f6;
   --surface: #ffffff;
-  --surface-muted: #faf9f7;
-  --surface-sunken: #f2f1ee;
-  --border: #e7e5e0;
-  --border-strong: #d6d4ce;
+  --surface-muted: #f9fbfa;
+  --surface-sunken: #eef2f0;
+  --border: #e1e8e5;
+  --border-strong: #cdd8d3;
 
-  --text: #1f2020;
-  --text-2: #5d5c58;
-  --text-3: #85837e;
+  --text: #14211c;
+  --text-2: #4d5f58;
+  --text-3: #7a8a84;
 
-  --sidebar: #222323;
-  --sidebar-2: #2b2d2d;
-  --sidebar-border: #383a3a;
+  --sidebar: #0d2a21;
+  --sidebar-2: #123629;
+  --sidebar-border: #1d4a3a;
 
   --info: #1c6b8c;
   --info-bg: #e6f0f5;
@@ -43,9 +43,9 @@
   --radius: 10px;
   --radius-sm: 8px;
 
-  --shadow-sm: 0 1px 2px rgba(31, 32, 32, 0.05);
-  --shadow-md: 0 1px 2px rgba(31, 32, 32, 0.05), 0 6px 16px -6px rgba(31, 32, 32, 0.12);
-  --ring: 0 0 0 3px rgba(180, 75, 20, 0.16);
+  --shadow-sm: 0 1px 2px rgba(20, 33, 28, 0.05);
+  --shadow-md: 0 1px 2px rgba(20, 33, 28, 0.05), 0 6px 16px -6px rgba(20, 33, 28, 0.12);
+  --ring: 0 0 0 3px rgba(15, 107, 78, 0.16);
 
   --font: var(--font-barlow), "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;

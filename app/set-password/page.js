@@ -4,7 +4,7 @@ import { apiFetch } from "@/lib/api";
 import SetPasswordForm from "./set-password-form";
 import styles from "../login/login.module.css";
 
-export const metadata = { title: "Set your password — Cynosure Customer Portal" };
+export const metadata = { title: "Set your password — Customer Portal" };
 
 async function describe(token) {
   try {
@@ -24,7 +24,7 @@ export default async function SetPasswordPage({ searchParams }) {
       <section className={`${styles.formSide} ${styles.solo}`}>
         <div className={styles.panel}>
           <div className={`${styles.mobileBrand} ${styles.brandShown}`}>
-            <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+            <Image src="/brand-logo.png" alt="Reviens Tech" width={207} height={56} priority />
           </div>
           <span className={styles.tag}>Customer Portal</span>
           {invite ? (

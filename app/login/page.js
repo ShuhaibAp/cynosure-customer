@@ -6,7 +6,7 @@ import { STAGE_INFO } from "@/lib/stages";
 import LoginForm from "./login-form";
 import styles from "./login.module.css";
 
-export const metadata = { title: "Sign in — Cynosure Customer Portal" };
+export const metadata = { title: "Sign in — Customer Portal" };
 
 const STEPS = ["Registration", "Inspection", "Quotation", "Pickup", "Operations", "Factory", "Final Reports"];
 
@@ -19,7 +19,7 @@ export default async function LoginPage({ searchParams }) {
     <main className={styles.page}>
       <section className={styles.aside}>
         <div className={styles.logoCard}>
-          <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+          <Image src="/brand-logo.png" alt="Reviens Tech" width={207} height={56} priority />
         </div>
         <div className={styles.pitch}>
           <h2 className={styles.headline}>Follow your e-waste order from pickup to final report.</h2>
@@ -32,13 +32,13 @@ export default async function LoginPage({ searchParams }) {
             ))}
           </ol>
         </div>
-        <p className={styles.asideFoot}>Cynosure Recycling Private Limited</p>
+        <p className={styles.asideFoot}>Reviens Tech</p>
       </section>
 
       <section className={styles.formSide}>
         <div className={styles.panel}>
           <div className={styles.mobileBrand}>
-            <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+            <Image src="/brand-logo.png" alt="Reviens Tech" width={207} height={56} priority />
           </div>
           <span className={styles.tag}>Customer Portal</span>
           <h1 className={styles.title}>Welcome</h1>
