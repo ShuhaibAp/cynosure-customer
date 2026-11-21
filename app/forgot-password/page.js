@@ -3,7 +3,7 @@ import Link from "next/link";
 import ForgotForm from "./forgot-form";
 import styles from "../login/login.module.css";
 
-export const metadata = { title: "Forgot password — Customer Portal" };
+export const metadata = { title: "Forgot password — Cynosure Customer Portal" };
 
 export default function ForgotPasswordPage() {
   return (
@@ -11,7 +11,7 @@ export default function ForgotPasswordPage() {
       <section className={`${styles.formSide} ${styles.solo}`}>
         <div className={styles.panel}>
           <div className={`${styles.mobileBrand} ${styles.brandShown}`}>
-            <Image src="/brand-logo.png" alt="Reviens Tech" width={207} height={56} priority />
+            <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
           </div>
           <span className={styles.tag}>Customer Portal</span>
           <h1 className={styles.title}>Reset your password</h1>

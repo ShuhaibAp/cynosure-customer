@@ -9,8 +9,8 @@ const barlow = Barlow({
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:4101"),
-  title: "Customer Portal — Lifecycle & Traceability ERP",
-  description: "Follow your Reviens Tech orders.",
+  title: "Cynosure — Customer Portal",
+  description: "Follow your Cynosure Recycling orders.",
 };
 
 export default function RootLayout({ children }) {

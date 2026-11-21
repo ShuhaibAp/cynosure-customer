@@ -15,8 +15,8 @@
   padding: 48px 56px;
   color: #fff;
   background:
-    radial-gradient(90% 60% at 0% 0%, rgba(124, 184, 47, 0.28), transparent 60%),
-    radial-gradient(70% 50% at 100% 100%, rgba(15, 107, 78, 0.35), transparent 65%), var(--sidebar);
+    radial-gradient(90% 60% at 0% 0%, rgba(243, 118, 48, 0.28), transparent 60%),
+    radial-gradient(70% 50% at 100% 100%, rgba(180, 75, 20, 0.35), transparent 65%), var(--sidebar);
   overflow: hidden;
 }
 

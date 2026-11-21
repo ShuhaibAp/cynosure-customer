@@ -11,8 +11,8 @@ export default async function PortalLayout({ children }) {
     <div className={styles.shell}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <Link href="/" className={styles.brand} aria-label="Lifecycle & Traceability ERP — my orders">
-            <Image src="/brand-logo.png" alt="Reviens Tech" width={140} height={38} priority />
+          <Link href="/" className={styles.brand} aria-label="Cynosure — my orders">
+            <Image src="/cynosure-logo.png" alt="Cynosure Recycling" width={140} height={27} priority />
           </Link>
           <div className={styles.user}>
             <span className={styles.name}>{user.name}</span>
