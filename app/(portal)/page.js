@@ -5,7 +5,7 @@ import { listOrders, listRequests } from "@/lib/orders";
 import { formatDay } from "@/lib/stages";
 import styles from "./portal.module.css";
 
-export const metadata = { title: "My orders — Cynosure Customer Portal" };
+export const metadata = { title: "My orders" };
 
 export default async function OrdersPage() {
   const [{ items }, requests] = await Promise.all([listOrders(), listRequests()]);

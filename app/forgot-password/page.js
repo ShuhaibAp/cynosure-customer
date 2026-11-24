@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { brand } from "@/lib/brand";
 import ForgotForm from "./forgot-form";
 import styles from "../login/login.module.css";
 
-export const metadata = { title: "Forgot password — Cynosure Customer Portal" };
+export const metadata = { title: "Forgot password" };
 
 export default function ForgotPasswordPage() {
   return (
@@ -11,7 +12,7 @@ export default function ForgotPasswordPage() {
       <section className={`${styles.formSide} ${styles.solo}`}>
         <div className={styles.panel}>
           <div className={`${styles.mobileBrand} ${styles.brandShown}`}>
-            <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+            <Image src={brand.logoSrc} alt={brand.companyName} width={brand.logoWidth} height={brand.logoHeight} priority />
           </div>
           <span className={styles.tag}>Customer Portal</span>
           <h1 className={styles.title}>Reset your password</h1>

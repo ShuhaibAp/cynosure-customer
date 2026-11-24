@@ -7,7 +7,7 @@ import styles from "../../portal.module.css";
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const order = await getOrder(id);
-  return { title: `${order.poNumber} — Cynosure Customer Portal` };
+  return { title: order.poNumber };
 }
 
 export default async function OrderPage({ params }) {

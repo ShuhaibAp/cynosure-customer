@@ -3,10 +3,11 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getUser } from "@/lib/dal";
 import { STAGE_INFO } from "@/lib/stages";
+import { brand } from "@/lib/brand";
 import LoginForm from "./login-form";
 import styles from "./login.module.css";
 
-export const metadata = { title: "Sign in — Cynosure Customer Portal" };
+export const metadata = { title: "Sign in" };
 
 const STEPS = ["Registration", "Inspection", "Quotation", "Pickup", "Operations", "Factory", "Final Reports"];
 
@@ -19,7 +20,7 @@ export default async function LoginPage({ searchParams }) {
     <main className={styles.page}>
       <section className={styles.aside}>
         <div className={styles.logoCard}>
-          <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+          <Image src={brand.logoSrc} alt={brand.companyName} width={brand.logoWidth} height={brand.logoHeight} priority />
         </div>
         <div className={styles.pitch}>
           <h2 className={styles.headline}>Follow your e-waste order from pickup to final report.</h2>
@@ -32,13 +33,13 @@ export default async function LoginPage({ searchParams }) {
             ))}
           </ol>
         </div>
-        <p className={styles.asideFoot}>Cynosure Recycling Private Limited</p>
+        <p className={styles.asideFoot}>{brand.companyName}</p>
       </section>
 
       <section className={styles.formSide}>
         <div className={styles.panel}>
           <div className={styles.mobileBrand}>
-            <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+            <Image src={brand.logoSrc} alt={brand.companyName} width={brand.logoWidth} height={brand.logoHeight} priority />
           </div>
           <span className={styles.tag}>Customer Portal</span>
           <h1 className={styles.title}>Welcome</h1>

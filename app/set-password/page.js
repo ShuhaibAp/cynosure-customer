@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { apiFetch } from "@/lib/api";
+import { brand } from "@/lib/brand";
 import SetPasswordForm from "./set-password-form";
 import styles from "../login/login.module.css";
 
-export const metadata = { title: "Set your password — Cynosure Customer Portal" };
+export const metadata = { title: "Set your password" };
 
 async function describe(token) {
   try {
@@ -24,7 +25,7 @@ export default async function SetPasswordPage({ searchParams }) {
       <section className={`${styles.formSide} ${styles.solo}`}>
         <div className={styles.panel}>
           <div className={`${styles.mobileBrand} ${styles.brandShown}`}>
-            <Image src="/cynosure-logo.png" alt="Cynosure Recycling Private Limited" width={207} height={40} priority />
+            <Image src={brand.logoSrc} alt={brand.companyName} width={brand.logoWidth} height={brand.logoHeight} priority />
           </div>
           <span className={styles.tag}>Customer Portal</span>
           {invite ? (
