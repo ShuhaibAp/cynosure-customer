@@ -19,6 +19,13 @@ export const metadata = {
     icon: brand.iconSrc,
     apple: brand.appleIconSrc,
   },
+  openGraph: {
+    images: [{ url: brand.ogImageSrc, width: 1200, height: 630, alt: brand.companyName }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [brand.ogImageSrc],
+  },
 };
 
 export default function RootLayout({ children }) {
